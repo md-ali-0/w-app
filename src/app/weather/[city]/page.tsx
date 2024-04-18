@@ -21,7 +21,6 @@ import humidityImage from "@/assets/images/humidity.png";
 import sunriseImage from "@/assets/images/sunrise.svg";
 import sunsetImage from "@/assets/images/sunset.svg";
 import windImage from "@/assets/images/wind.png";
-import getWeatherData from "@/utils/getWeatherData";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -66,7 +65,10 @@ const CityWeatherUpdate = () => {
     const latitude = parseInt(searchParams.get("lat") || "0", 10);
 
     useEffect(() => {
-        fetchData();
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=en&appid=${process.env.API_KEY}`;
+
+        fetch(url).then(res=>res.json()).then(data=>setCurrentWeather(data))
+
     }, [longitude, latitude]);
 
     useEffect(() => {
@@ -125,11 +127,6 @@ const CityWeatherUpdate = () => {
             setBackground(backgroundImage);
         }
     }, [currentWeather]);
-
-    const fetchData = async () => {
-        const data = await getWeatherData({ latitude, longitude });
-        setCurrentWeather(data);
-    };
 
     const getTime = (timestamp: number) => {
         const date = new Date(timestamp * 1000);
