@@ -6,6 +6,7 @@ This is a simple weather application built with Next.js. It allows users to chec
 
 -   **Current Weather:** Users can view the current weather conditions for a specific location.
 -   **Search:** Users can search for weather information by entering a location.
+-   **Forecast:** Five Day Forecast information Update for a specific location.
 -   **Responsive Design:** The application is designed to be responsive and accessible across various devices.
 
 ## Technologies Used
