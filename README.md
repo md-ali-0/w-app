@@ -13,7 +13,7 @@ This is a simple weather application built with Next.js. It allows users to chec
 -   **Next.js:** Next.js is used as the framework for building the application.
 -   **React:** React is used for building the user interface components.
 -   **OpenWeatherMap API:** The OpenWeatherMap API is used to fetch weather data for different locations.
--   **CSS:** Custom CSS is used for styling the application.
+-   **CSS:** Tailwind CSS for styling the application.
 
 ## Getting Started
 
